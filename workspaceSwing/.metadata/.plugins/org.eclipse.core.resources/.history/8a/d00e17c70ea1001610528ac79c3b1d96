@@ -1,0 +1,19 @@
+package rajeshwari.codes.thread.codelab;
+
+import java.awt.Graphics2D;
+
+public class Slider {
+
+	private static final int WIDTH = 200;
+	private static final int HEIGHT = 50;
+
+	private int x;
+	
+	public Slider() {
+		x = 0;
+	}
+
+	public void draw(Graphics2D g2d, int y) {
+		g2d.fillRect(x, y, WIDTH, HEIGHT);
+	}
+}

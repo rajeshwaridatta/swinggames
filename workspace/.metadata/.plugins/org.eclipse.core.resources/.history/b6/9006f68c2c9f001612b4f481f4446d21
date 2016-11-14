@@ -1,0 +1,13 @@
+package rajeshwari.codes.tictactoe;
+
+public class Launcher {
+
+	public static void main() {
+		Board board = new Board();
+		board.updateBoard(0, 0);
+		board.updateBoard(0, 1);
+		board.updateBoard(0, 2);
+		board.updateBoard(2, 1);
+		board.showBoard();
+	}
+}

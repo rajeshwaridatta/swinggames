@@ -1,0 +1,15 @@
+package rajeshwari.codes.tictactoe;
+
+public class Launcher {
+
+	public static void main() {
+		Board board = new Board();
+		Player p1 = new HumanPlayer();
+		Player p2 = new BotPlayer();
+		board.updateBoard(0, 0, p1);
+		board.updateBoard(0, 1, p2);
+		board.updateBoard(0, 2, p1);
+		board.updateBoard(2, 1, p2);
+		board.showBoard();
+	}
+}

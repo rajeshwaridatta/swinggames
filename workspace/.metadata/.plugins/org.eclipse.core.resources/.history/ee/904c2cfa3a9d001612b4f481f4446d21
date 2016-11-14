@@ -1,0 +1,7 @@
+import java.util.List;
+
+public class DupFinder {
+	public boolean dupPresent(List<Integer> numberList) {
+		System.out.println("Inside class " + this.getClass().getName());
+	}
+}

@@ -1,0 +1,14 @@
+package rajeshwari.codes.tictactoe;
+
+public class BotPlayer implements Player {
+
+	@Override
+	public char getSymbol() {
+		return '2';
+	}
+
+	@Override
+	public Input askUser(Board board) {
+		return null;
+	}
+}

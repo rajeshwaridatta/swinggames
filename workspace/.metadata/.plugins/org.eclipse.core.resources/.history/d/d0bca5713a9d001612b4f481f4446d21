@@ -1,0 +1,19 @@
+import java.util.List;
+
+
+public class ComparativeDupFinder implements DupFinder {
+
+	@Override
+	public boolean dupPresent(List<Integer> numberList) {
+		System.out.println(
+				"Inside class " + this.getClass().getName());
+		for (int i = 0; i<numberList.size(); i++) {
+			for (int j = 0; j< numberList.size(); j++) {
+				if (numberList.get(i).equals(numberList.get(j))) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+}

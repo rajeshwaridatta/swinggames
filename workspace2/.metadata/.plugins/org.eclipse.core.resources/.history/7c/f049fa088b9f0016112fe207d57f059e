@@ -1,0 +1,8 @@
+package rajeshwari.codes.minmaxgame;
+
+public class Main {
+	public static void main(String[] var) {
+		System.out.println("Hello World");
+	}
+
+}

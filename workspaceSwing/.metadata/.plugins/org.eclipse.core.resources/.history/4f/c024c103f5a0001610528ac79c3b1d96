@@ -1,0 +1,23 @@
+package rajeshwari.codes.probsolv;
+
+public class fibonacci {
+	public static void main(String[] args){
+		int n1=0;
+		int n2=1;
+		int n3;
+		for (int i=1;i<4000000; i++){
+			n3= n1 + n2;
+			n1=n2;
+			n2=n3;
+			int sumOfEven=0;
+			for( int e=0;e<4000000;e++){
+				if(e%2==0){
+					sumOfEven+=e;
+				}
+			}
+		}
+		System.out.println("The sum of even numbers in fibonacci series is:"+""+"sumOfEven");
+		
+	}
+
+}

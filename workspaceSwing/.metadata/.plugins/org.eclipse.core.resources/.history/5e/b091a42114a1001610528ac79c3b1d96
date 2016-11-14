@@ -1,0 +1,28 @@
+package rajeshwari.codes.thread.codelab;
+
+import java.awt.Graphics2D;
+
+public class Slider {
+
+	public static final int WIDTH = 150;
+	public static final int HEIGHT = 25;
+
+	private int x;
+	private final int frameWidth;
+
+	public Slider() {
+		x = 0;
+		this.frameWidth = frameWidth;
+	}
+
+	public void draw(Graphics2D g2d, int y) {
+		g2d.fillRoundRect(x, y, WIDTH, HEIGHT, 25, 25);
+	}
+
+	public void moveRight() {
+		int newX = x + 5;
+		if (newX < frameWidth) {
+			x = newX;
+		}
+	}
+}

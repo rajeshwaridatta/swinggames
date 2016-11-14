@@ -1,0 +1,37 @@
+package rajeshwari.codes.shootBall;
+
+import java.awt.Graphics2D;
+
+public class Ball {
+	
+	private final double GRAVITY = 9.8;
+	private final double INTERVAL = 1.0;
+	private double x;
+	private double y;
+	private double vx;
+	private double vy;
+
+	public Ball() {
+		x = 0;
+		y = 450;
+		vx = 70;
+		vy = -70;
+	}
+
+	public boolean moveBall() {
+		vy = vy + GRAVITY*INTERVAL;
+		x =  x + vx*INTERVAL;
+		y = y + INTERVAL*vy+ 0.5*GRAVITY*INTERVAL*INTERVAL;
+		return false;
+	}
+
+	private int convertToInt(double d) {
+		Double dob = new Double(d);
+		return dob.intValue();
+	}
+
+	public void draw(Graphics2D g2d) {
+		g2d.fillOval(convertToInt(x), convertToInt(y), 30, 30);
+		System.out.println("print"+x + " " + y);
+	}
+}

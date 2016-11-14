@@ -1,0 +1,15 @@
+package rajeshwari.codes.shootBall;
+
+public class Blocks {
+	public int widthofblock1 = 50;
+	public int heightofblock1 = 50;
+	public int x1 =  850;
+	public int y1 = 0;
+	public int widthofblock2 = 70;
+	public int heightofblock2 = 90;
+	public int x2 =  800;
+	public int y2 = 50;
+	
+	
+
+}

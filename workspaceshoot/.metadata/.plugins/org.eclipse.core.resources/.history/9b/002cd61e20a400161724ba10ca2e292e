@@ -1,0 +1,25 @@
+package rajeshwari.codes.shootBall;
+
+import java.awt.Graphics2D;
+
+public class Blocks {
+	public int widthofblock;
+	public int heightofblock1;
+	public int x1;
+	public int y1;
+
+	public Blocks(int x, int y, int height, int width) {
+		this.x1 = x;
+		this.y1 = y;
+		this.heightofblock1 = height;
+		this.widthofblock = width;
+	}
+
+	public void draw(Graphics2D g2d, GameJPanel panel){
+		g2d.fillRoundRect(x, y, width, height, 50, 50);
+	}
+}
+	
+	
+
+

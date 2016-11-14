@@ -1,0 +1,21 @@
+package rajeshwari.codes.shootBall;
+
+import javax.swing.JPanel;
+
+public  class  GameJPanel extends JPanel {
+	
+	
+	
+	public GameJPanel(){
+		super();
+		
+		
+		
+		
+		
+		
+		
+	}
+		
+
+}

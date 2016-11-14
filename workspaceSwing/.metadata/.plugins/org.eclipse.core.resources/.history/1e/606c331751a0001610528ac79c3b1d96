@@ -1,0 +1,52 @@
+package rajeshwari.codes.thread.codelab;
+
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
+
+import javax.swing.JPanel;
+
+public class GameJPanel extends JPanel {
+	
+	// fields to maintain left top corner of the moving ball.
+	private int x;
+	private int y;
+	private int vx;
+	private int vy;
+
+	public GameJPanel() {
+		super();
+		x = 0;
+		y = 0;
+		vx = 1;
+		vy = 1;
+	}
+
+	public void moveBall() {
+		int newX = x + vx;
+		int newY = y + vy;
+		if (newX + 30 > getWidth()) {
+			vx = -1;
+		}
+		if (newY + 30 > getHeight()) {
+			vy = -1;
+		}
+		if (newX < 0) {
+			vx = 1;
+		}
+		if (newY < 0) {
+			vy = 1;
+		}
+		x = x + vx;
+		y = y + vy;
+	}
+
+	@Override
+	public void paint(Graphics g) {
+		super.paint(g);
+		Graphics2D g2d = (Graphics2D) g;
+		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+				RenderingHints.VALUE_ANTIALIAS_ON);
+		g2d.fillOval(x, y, 30, 30);
+	}
+}

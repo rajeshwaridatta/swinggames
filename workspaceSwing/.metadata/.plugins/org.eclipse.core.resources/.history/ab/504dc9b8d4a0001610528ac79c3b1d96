@@ -1,0 +1,28 @@
+package rajeshwari.codes.probsolv;
+
+import java.util.ArrayList;
+
+public class main {
+	public static void Main(String[] args){
+		ArrayList<Integer> numList= new ArrayList<Integer>();
+		int sumForThree= 0;
+		int sumForFive=0;
+		int totalSum=0;
+		
+		for(int e=0; e<1000; e++){
+			if(e%3==0){
+				sumForThree+=e;
+				
+			}
+		}
+		for(int e=0; e<1000;e++){
+			if(e%5==0){
+				sumForFive+=e;
+			}
+		}
+		totalSum= sumForThree + sumForFive;
+		System.out.println("The sum is:" + "" + totalSum);
+		
+	}
+
+} 

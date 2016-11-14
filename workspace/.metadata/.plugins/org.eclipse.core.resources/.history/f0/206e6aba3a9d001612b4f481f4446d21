@@ -1,0 +1,4 @@
+
+public class SortDupFinder implements DupFinder {
+
+}

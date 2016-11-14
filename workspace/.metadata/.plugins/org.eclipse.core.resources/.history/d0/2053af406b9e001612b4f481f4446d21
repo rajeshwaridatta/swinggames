@@ -1,0 +1,10 @@
+package rajeshwari.codes.tictactoe;
+
+public class Board {
+
+	private char data[][] = new char[3][3];
+
+	public void show() {
+		
+	}
+}

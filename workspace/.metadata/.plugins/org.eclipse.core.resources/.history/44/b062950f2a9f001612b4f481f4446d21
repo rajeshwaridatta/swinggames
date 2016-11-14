@@ -1,0 +1,9 @@
+package rajeshwari.codes.tictactoe;
+
+public class Launcher {
+
+	public static void main() {
+		Board board = new Board();
+		
+	}
+}

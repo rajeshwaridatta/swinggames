@@ -1,0 +1,28 @@
+package rajeshwari.codes.shootBall;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+public class Main {
+	public static void main(String[] args) throws InterruptedException{
+		JFrame frame = new JFrame("Shoot Ball");
+		frame.setSize(1000, 600);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		GameJPanel gamePanel = new GameJPanel();
+		frame.add(gamePanel);
+		frame.setVisible(true);
+		gamePanel.init();
+		while(true){
+			GameResult result = gamePanel.update();
+			if (result.equals(GameResult.WON)) {
+				JOptionPane.showMessageDialog(
+						gamePanel,
+						"Game Over",
+						"You Suck!",
+						JOptionPane.YES_NO_OPTION);
+			}
+			gamePanel.repaint();
+			Thread.sleep(10);
+		}
+	}
+}

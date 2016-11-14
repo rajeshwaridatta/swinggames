@@ -1,0 +1,108 @@
+package rajeshwari.codes.tictactoe;
+
+public class Board {
+	private char dataMatrix[][] = new char[3][3];
+
+	public Board() {
+		for(int i=0;i<3;i++){
+			for (int j=0;j<3;j++) {
+				dataMatrix[i][j] = '-';
+			}
+		}
+	}
+
+	public void showBoard(){
+		for(int i=0;i<3;i++){
+			String rowLine = "";
+			for (int j=0;j<3;j++){
+				rowLine+=dataMatrix[i][j];
+			}
+			System.out.println(rowLine);
+		}
+	}
+
+	public boolean updateBoard(Input input, Player player) {
+		if (dataMatrix[input.getX()][input.getY()] == '-') {
+			dataMatrix[input.getX()][input.getY()] = player.getSymbol();
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * returns true if there exists one row containing all one;
+	 */
+	public boolean ifUserWins(Player player) {
+		// check if horizontal row exists
+		for (int i =0;i<3;i++) {
+			if (ifRowContainsAllOne(dataMatrix[i], player)) {
+				return true;
+			}
+		}
+		// check if diagonal row exists
+		if (firstDiagonalAllOne(player)) {
+			return true;
+		}
+		if (secondDiagonalAllOne(player)) {
+			return true;
+		}
+		// check if vertical column exists
+		for (int j =0;j<3;j++) {
+			// check if any jth column has all one
+			boolean doesThereExistAnyNumberNotEqualToOne = false;
+			for (int i =0; i<3;i++) {
+				if (dataMatrix[i][j] != player.getSymbol()) {
+					doesThereExistAnyNumberNotEqualToOne = true;
+					break;
+				}
+			}
+			if (!doesThereExistAnyNumberNotEqualToOne) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * returns true if row contains all one
+	 */
+	private boolean ifRowContainsAllOne(char row[], Player player) {
+		for (int i = 0; i<3; i++) {
+			if (row[i]!=player.getSymbol()) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	private boolean firstDiagonalAllOne(Player player) {
+		for (int i=0; i<3;i++) {
+			int j = i;
+			if (dataMatrix[i][j] != player.getSymbol()) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	private boolean secondDiagonalAllOne(Player player) {
+		for (int i=0; i<3;i++) {
+			int j = 2-i;
+			if (dataMatrix[i][j] != player.getSymbol()) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	public boolean isComplete() {
+		for (int i=0;i<3;i++) {
+			for (int j=0;j<3;j++) {
+				if (dataMatrix[i][j] == '-') {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+}

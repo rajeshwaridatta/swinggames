@@ -1,0 +1,44 @@
+package rajeshwari.codes.thread.codelab;
+
+import java.awt.Graphics2D;
+
+public class Ball {
+	private int velStep = 1;
+	// fields to maintain left top corner of the moving ball.
+	private int x;
+	private int y;
+	private int vx;
+	private int vy;
+
+	public Ball() {
+		x = 0;
+		y = 0;
+		vx = 1;
+		vy = 1;
+	}
+
+	public void asdas(Ball ball) {
+	}
+	public void draw(Graphics2D g2d) {
+		g2d.fillOval(x, y, 30, 30);
+	}
+
+	public void moveBall(int width, int height) {
+		int newX = x + vx;
+		int newY = y + vy;
+		if (newX + 30 > width) {
+			vx = -1 * velStep;
+		}
+		if (newY + 30 > height) {
+			vy = -1 * velStep;
+		}
+		if (newX < 0) {
+			vx = velStep;
+		}
+		if (newY < 0) {
+			vy = velStep;
+		}
+		x = x + vx;
+		y = y + vy;
+	}
+}

@@ -1,0 +1,136 @@
+package rajeshwari.codes.SudokuGame;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class main {
+	public static void main(String[] s) {
+		int [][] sudokuBoard= new int[9][9];
+		sudokuBoard[0][0]= 8;
+		sudokuBoard[0][6]= 9;
+		sudokuBoard[0][7]= 6;
+		sudokuBoard[1][4]= 1;
+		sudokuBoard[1][5]= 5;
+		sudokuBoard[2][1]= 7;
+		sudokuBoard[2][2]= 6;
+		sudokuBoard[2][6]= 1;
+		sudokuBoard[2][7]= 2;
+		sudokuBoard[3][3]= 1;
+		sudokuBoard[3][4]= 6;
+		sudokuBoard[3][6]= 7;
+		sudokuBoard[4][2]= 5;
+		sudokuBoard[4][1]= 9;
+		sudokuBoard[4][5]= 7;
+		sudokuBoard[5][1]= 4;
+		sudokuBoard[5][4]= 2;
+		sudokuBoard[6][2]= 3;
+		sudokuBoard[7][3]= 3;
+		sudokuBoard[7][4]= 8;
+		sudokuBoard[7][8]= 6;
+		sudokuBoard[8][1]= 5;
+		sudokuBoard[8][3]= 2;
+		sudokuBoard[8][7]= 9;
+		
+		Scanner reader = new Scanner(System.in); 
+		
+		while(isEmpty(sudokuBoard)) {
+			showBoard(sudokuBoard);
+			while(true) {
+				System.out.println("Choose any of the numbers from 1 to 9: " );
+				int choosenNumber = reader.nextInt();
+				System.out.println("Enter the X-coordinate: ");
+				int xcord= reader.nextInt();
+				System.out.println("Enter the Y-coordinate: ");
+				int ycord= reader.nextInt();
+				
+				if (ifInputValid(choosenNumber, xcord,ycord,sudokuBoard)){
+					sudokuBoard[ycord][xcord]= choosenNumber;
+					break;
+				}
+				System.out.println("Invalid Input");
+		    }	
+		}
+		reader.close();
+	}
+
+	private static boolean isEmpty(int[][] board) {
+		for(int i=0; i<9;i++){
+			for (int j=0; j<9;j++){
+				if(board[i][j]==0){
+					return true;
+				}
+			}
+		} 
+		return false;
+	}
+
+	private static void showBoard(int[][] board) {
+		for(int i=0; i<9;i++){
+			if (i%3==0) {
+				System.out.println("");
+			}
+			for (int j=0; j<9;j++){
+				if (j%3 == 0) {
+					System.out.print(" ");
+				}
+				System.out.print(board[i][j]);
+			}
+			System.out.println("");
+		}
+	}
+	
+	private static boolean ifInputValid(int n, int colN, int rowN, int[][] board) {
+		Map<Integer, Boolean> d=new HashMap<>();		
+		for (int j=0; j<9; j++){
+			int val= board[rowN][j];
+			if (j == colN) {
+				val = n;
+			}
+			if (val == 0) {
+				continue;
+			}
+			if (d.containsKey(val)){
+				System.out.println("Row Invaid" + val);
+				return false;
+			}
+			d.put(val, true);
+		}
+		Map<Integer,Boolean> dC= new HashMap<>();
+		for(int i=0; i<9; i++){
+			int val= board[i][colN];
+			if (i== rowN){
+				val= n;
+			}
+			if (val == 0) {
+				continue;
+			}
+			if (dC.containsKey(val)){
+				System.out.println("Col Invaid");
+				return false;
+			}
+			dC.put(val, true);
+		}
+		int boxStartColN= colN-colN%3;
+		int boxStartRowN= rowN-rowN%3;
+		Map<Integer, Boolean> dBox= new HashMap<>();
+		for(int i=boxStartRowN;i<boxStartRowN+3; i++){
+			for(int j=boxStartColN;j<boxStartColN+3; j++){
+				int val= board[i][j];
+				if(i==rowN && j==colN){
+					val=n;
+				}
+				if (val == 0) {
+					continue;
+				}
+				if(dBox.containsKey(val)){
+					System.out.println("Box Invaid");
+					return false;					
+				}
+				dBox.put(val, true);
+			}
+		}
+		return true;
+	}
+}
+

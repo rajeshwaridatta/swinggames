@@ -1,0 +1,26 @@
+import java.util.LinkedList;
+import java.util.List;
+
+import rajeshwari.codes.inheritance.ComparativeDupFinder;
+import rajeshwari.codes.inheritance.DupFinder;
+
+
+
+public class Main {
+
+	public static void main(String[] args){
+	    System.out.println("Hello World");
+	    List<Integer> l = new LinkedList<Integer>();
+	    l.add(12);
+	    l.add(22);
+	    l.add(32);
+	    l.add(42);
+	    l.add(12);
+	    DupFinder d = new ComparativeDupFinder();
+	    findDup(d, l);
+	}
+
+	private static void findDup(DupFinder d, List<Integer> numberList) {
+		System.out.println(d.dupPresent(numberList));
+	}
+}

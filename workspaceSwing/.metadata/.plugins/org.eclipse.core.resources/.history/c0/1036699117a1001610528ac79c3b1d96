@@ -1,0 +1,32 @@
+package rajeshwari.codes.thread.codelab;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+public class Main {
+
+	public static void main(String[] args) throws InterruptedException {
+		JFrame frame = new JFrame("Mini Tennis");
+		frame.setSize(1000, 600);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		GameJPanel gamePanel = new GameJPanel();
+		frame.add(gamePanel);
+		ArrowKeyListener listener = new ArrowKeyListener(gamePanel);
+		gamePanel.addKeyListener(listener);
+		frame.setVisible(true);
+		
+		while(true) {
+			boolean hasLost = gamePanel.update();
+			if (hasLost) {
+				JOptionPane.showMessageDialog(
+						gamePanel,
+						"Game Over",
+						"Game Over",
+						JOptionPane.YES_NO_OPTION);
+				break;
+			}
+			gamePanel.repaint();
+			Thread.sleep(10);
+		}
+	}
+}

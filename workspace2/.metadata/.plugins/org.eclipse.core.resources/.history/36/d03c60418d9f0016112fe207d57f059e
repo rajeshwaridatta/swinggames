@@ -1,0 +1,22 @@
+package rajeshwari.codes.minmaxgame;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+public class Main {
+	public static void main(String[] var) {
+		List<Integer> reList= generateList();
+		System.out.println(reList);
+	}
+
+	private static List<Integer> generateList() {
+		List<Integer> rnList=new ArrayList<>();
+		Random rn= new Random();
+		for(int i=0; i<10;i++){
+			int r = rn.nextInt() % 100;
+			rnList.add(r);
+		}
+		return rnList;
+	}
+}

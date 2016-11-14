@@ -1,0 +1,61 @@
+package rajeshwari.codes.tictactoe;
+
+public class Board {
+	private char dataMatrix[][] = new char[3][3];
+
+	public Board() {
+		for(int i=0;i<3;i++){
+			for (int j=0;j<3;j++) {
+				dataMatrix[i][j] = '-';
+			}
+		}
+	}
+
+	public void showBoard(){
+		for(int i=0;i<3;i++){
+			String rowLine = "";
+			for (int j=0;j<3;j++){
+				rowLine+=dataMatrix[i][j];
+			}
+			System.out.println(rowLine);
+		}
+	}
+
+	public boolean updateBoard(Input input, Player player) {
+		if (dataMatrix[input.getX()][input.getY()] == '-') {
+			dataMatrix[input.getX()][input.getY()] = player.getSymbol();
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * returns true if there exists one row containing all one;
+	 */
+	public boolean ifUserWins() {
+		
+	}
+	
+	/**
+	 * returns true if row contains all one
+	 */
+	private boolean ifRowContainsAllOne(char row[]) {
+		for (int i = 0; i<3; i++) {
+			if (row[i]!='1') {
+				return false;
+			}
+			return true;
+		}
+	}
+
+	public boolean isComplete() {
+		for (int i=0;i<3;i++) {
+			for (int j=0;j<3;j++) {
+				if (dataMatrix[i][j] == '-') {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+}

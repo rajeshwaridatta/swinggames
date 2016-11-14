@@ -1,0 +1,35 @@
+package rajeshwari.codes.tictactoe;
+
+public class Launcher {
+
+	public static void main() {
+		Board board = new Board();
+		Player p1 = new HumanPlayer();
+		Player p2 = new BotPlayer();
+		
+		board.showBoard();
+		while (!board.isComplete()) {
+			Input input = p1.askUser(board);
+			if (board.updateBoard(input, p1)) {
+				if (board.ifUserWins(p1)) {
+					System.out.println("Human Player Won");
+					return;
+				}
+				Input input2 = p2.askUser(board);
+				board.updateBoard(input2, p2);
+				if (board.ifUserWins(p2)){
+					System.out.println("Bot Player won");
+					return;
+				}
+			} else {
+				continue;
+			}
+		}
+		System.out.println("There is a Tie!");
+		/*board.updateBoard(0, 0, p1);
+		board.updateBoard(0, 1, p2);
+		board.updateBoard(0, 2, p1);
+		board.updateBoard(2, 1, p2);
+		board.showBoard();*/
+	}
+}

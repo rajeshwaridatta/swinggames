@@ -1,0 +1,7 @@
+package rajeshwari.codes.SudokuGame;
+
+public class SudokuBoard {
+
+	private int [][] sudokuBoard= new int[9][9];
+	
+}

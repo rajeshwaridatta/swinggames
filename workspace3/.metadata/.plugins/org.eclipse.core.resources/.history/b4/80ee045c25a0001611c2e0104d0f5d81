@@ -1,0 +1,59 @@
+package rajeshwari.codes.SudokuGame;
+
+public class SudokuBoard {
+
+	private int[][] sudokuBoard= new int[9][9];
+
+	public boolean isEmpty() {
+		for(int i=0; i<9;i++){
+			for (int j=0; j<9;j++){
+				if(sudokuBoard[i][j]==0){
+					return true;
+				}
+			}
+		} 
+		return false;
+	}
+
+	public void showBoard() {
+		for(int i=0; i<9;i++){
+			if (i%3==0) {
+				System.out.println("");
+			}
+			for (int j=0; j<9;j++){
+				if (j%3 == 0) {
+					System.out.print(" ");
+				}
+				System.out.print(sudokuBoard[i][j]);
+			}
+			System.out.println("");
+		}
+	}
+
+	public void init() {
+		sudokuBoard[0][0]= 8;
+		sudokuBoard[0][6]= 9;
+		sudokuBoard[0][7]= 6;
+		sudokuBoard[1][4]= 1;
+		sudokuBoard[1][5]= 5;
+		sudokuBoard[2][1]= 7;
+		sudokuBoard[2][2]= 6;
+		sudokuBoard[2][6]= 1;
+		sudokuBoard[2][7]= 2;
+		sudokuBoard[3][3]= 1;
+		sudokuBoard[3][4]= 6;
+		sudokuBoard[3][6]= 7;
+		sudokuBoard[4][2]= 5;
+		sudokuBoard[4][1]= 9;
+		sudokuBoard[4][5]= 7;
+		sudokuBoard[5][1]= 4;
+		sudokuBoard[5][4]= 2;
+		sudokuBoard[6][2]= 3;
+		sudokuBoard[7][3]= 3;
+		sudokuBoard[7][4]= 8;
+		sudokuBoard[7][8]= 6;
+		sudokuBoard[8][1]= 5;
+		sudokuBoard[8][3]= 2;
+		sudokuBoard[8][7]= 9;
+	}
+}

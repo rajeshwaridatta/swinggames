@@ -1,0 +1,16 @@
+package rajeshwari.codes.inheritance;
+import java.util.LinkedList;
+import java.util.List;
+
+import rajeshwari.codes.tictactoe.Launcher;
+
+
+
+
+public class Main {
+
+	public static void main(String[] args){
+	    Launcher l = new Launcher();
+	    l.main();
+	}
+}

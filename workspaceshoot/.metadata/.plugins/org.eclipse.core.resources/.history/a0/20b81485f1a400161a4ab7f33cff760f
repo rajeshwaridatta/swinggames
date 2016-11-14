@@ -1,0 +1,35 @@
+package rajeshwari.codes.shootBall;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+public class Main {
+	public static void main(String[] args) throws InterruptedException{
+		JFrame frame = new JFrame("Shoot Ball");
+		frame.setSize(1000, 600);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		GameJPanel gamePanel = new GameJPanel();
+		frame.add(gamePanel);
+		frame.setVisible(true);
+		gamePanel.init();
+		UserClickListener userClickListener = new UserClickListener();
+		frame.addMouseListener(userClickListener);
+		while (!userClickListener.started) {
+			Thread.sleep(1000);
+		}
+		Point clickPoint = userClickListener.clickPoint;
+		while(true){
+			GameResult result = gamePanel.update();
+			if (result.equals(GameResult.WON)) {
+				JOptionPane.showMessageDialog(
+						gamePanel,
+						"There is a COLLISION!",
+						"You WON!",
+						JOptionPane.YES_NO_OPTION);
+				break;
+			}
+			gamePanel.repaint();
+			Thread.sleep(10);
+		}
+	}
+}

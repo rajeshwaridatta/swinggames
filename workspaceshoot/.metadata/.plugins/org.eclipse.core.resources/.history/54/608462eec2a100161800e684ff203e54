@@ -1,0 +1,17 @@
+package rajeshwari.codes.shootBall;
+
+import javax.swing.JFrame;
+
+public class Main {
+	public static void main(String[] args){
+		JFrame frame = new JFrame("Shoot Ball");
+		frame.setSize(1000, 600);
+		
+		GameJPanel gamePanel = new GameJPanel();
+		frame.add(gamePanel);
+		
+		frame.setVisible(true);
+		
+	}
+
+}

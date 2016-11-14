@@ -1,0 +1,17 @@
+package rajeshwari.codes.thread.codelab;
+
+public class Ball {
+	private int velStep = 1;
+	// fields to maintain left top corner of the moving ball.
+	private int x;
+	private int y;
+	private int vx;
+	private int vy;
+
+	public Ball() {
+		x = 0;
+		y = 0;
+		vx = 1;
+		vy = 1;
+	}
+}

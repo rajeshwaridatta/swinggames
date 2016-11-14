@@ -1,0 +1,18 @@
+import java.util.ArrayList;
+import java.util.List;
+
+
+
+public class Main {
+
+	public static void main(String[] args){
+	    System.out.println("Hello World");
+	    List<Integer> l = new ArrayList<>();
+	    l.add(12);
+	    l.add(22);
+	    l.add(32);
+	    l.add(42);
+	    l.add(12);
+	    SortDupFinder d = new SortDupFinder();
+	}
+}

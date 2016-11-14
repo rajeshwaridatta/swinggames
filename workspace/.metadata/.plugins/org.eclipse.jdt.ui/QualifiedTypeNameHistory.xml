@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.util.Collection"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="SortDupFinder"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="DupFinder"/>
+<fullyQualifiedTypeName name="BaseDupFinder"/>
+<fullyQualifiedTypeName name="ComparativeDupFinder"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="rajeshwari.codes.tictactoe.Board"/>
+<fullyQualifiedTypeName name="rajeshwari.codes.tictactoe.Launcher"/>
+<fullyQualifiedTypeName name="rajeshwari.codes.tictactoe.HumanPlayer"/>
+<fullyQualifiedTypeName name="rajeshwari.codes.tictactoe.BotPlayer"/>
+<fullyQualifiedTypeName name="rajeshwari.codes.tictactoe.Player"/>
+<fullyQualifiedTypeName name="rajeshwari.codes.tictactoe.Input"/>
+<fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+</qualifiedTypeNameHistroy>

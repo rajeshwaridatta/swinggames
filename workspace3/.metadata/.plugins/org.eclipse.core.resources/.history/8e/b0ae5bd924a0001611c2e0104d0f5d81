@@ -1,0 +1,36 @@
+package rajeshwari.codes.SudokuGame;
+
+public class SudokuBoard {
+
+	private int [][] sudokuBoard= new int[9][9];
+	
+	public SudokuBoard() {
+		
+	}
+	public void init() {
+		sudokuBoard[0][0]= 8;
+		sudokuBoard[0][6]= 9;
+		sudokuBoard[0][7]= 6;
+		sudokuBoard[1][4]= 1;
+		sudokuBoard[1][5]= 5;
+		sudokuBoard[2][1]= 7;
+		sudokuBoard[2][2]= 6;
+		sudokuBoard[2][6]= 1;
+		sudokuBoard[2][7]= 2;
+		sudokuBoard[3][3]= 1;
+		sudokuBoard[3][4]= 6;
+		sudokuBoard[3][6]= 7;
+		sudokuBoard[4][2]= 5;
+		sudokuBoard[4][1]= 9;
+		sudokuBoard[4][5]= 7;
+		sudokuBoard[5][1]= 4;
+		sudokuBoard[5][4]= 2;
+		sudokuBoard[6][2]= 3;
+		sudokuBoard[7][3]= 3;
+		sudokuBoard[7][4]= 8;
+		sudokuBoard[7][8]= 6;
+		sudokuBoard[8][1]= 5;
+		sudokuBoard[8][3]= 2;
+		sudokuBoard[8][7]= 9;
+	}
+}

@@ -1,0 +1,14 @@
+package rajeshwari.codes.thread.codelab;
+
+public class Slider {
+
+	private static final int WIDTH = 200;
+
+	private int x;
+	
+	public Slider() {
+		x = 0;
+	}
+
+	
+}

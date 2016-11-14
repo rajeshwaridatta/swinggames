@@ -1,0 +1,10 @@
+package rajeshwari.codes.thread.codelab;
+
+public class Slider {
+
+	private int x;
+	
+	public Slider() {
+		
+	}
+}

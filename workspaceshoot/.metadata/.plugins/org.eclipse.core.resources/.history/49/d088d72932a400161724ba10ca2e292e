@@ -1,0 +1,57 @@
+package rajeshwari.codes.shootBall;
+
+import java.awt.Color;
+import java.awt.Graphics2D;
+
+public class Ball {
+
+	public static final int HEIGHT = 30;
+	public static final int WIDTH = 30;
+
+	private final double GRAVITY = 90.8;
+	private final double INTERVAL = 0.01;
+	private double x;
+	private double y;
+	private double vx;
+	private double vy;
+	private int velStep = 1;
+
+	public Ball() {
+		x = 0.0;
+		y = 450;
+		vx = 150;
+		vy = -150;
+	}
+
+	public boolean moveBall(int panelHeight) {
+		double newvy = vy + GRAVITY*INTERVAL;
+		double newvx =  x + (vx*INTERVAL);
+		double newy = y + (INTERVAL*vy+ 0.5*GRAVITY*INTERVAL*INTERVAL);
+		if (newy + HEIGHT > panelHeight){
+			velStep= -1 * velStep;
+			
+		}
+		vy = vy + GRAVITY*INTERVAL;
+		x =  x + (vx*INTERVAL);
+		y = y + (INTERVAL*vy+ 0.5*GRAVITY*INTERVAL*INTERVAL);
+		return false;
+	}
+
+	public void draw(Graphics2D g2d) {
+		g2d.setColor(Color.MAGENTA);
+		g2d.fillOval(convertToInt(x), convertToInt(y), WIDTH, HEIGHT);
+	}
+
+	public double getX() {
+		return x;
+	}
+
+	public double getY() {
+		return y;
+	}
+
+	private int convertToInt(double d) {
+		Double dob = new Double(d);
+		return dob.intValue();
+	}
+}
